@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejX-Ru-pxS">
+                    <rect key="frame" x="33" y="102" width="59" height="23"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Thursday" id="JCZ-iJ-oQT">
+                        <font key="font" size="13" name="AvenirNext-DemiBold"/>
+                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk8-xO-BKj">
+                    <rect key="frame" x="6" y="8" width="33" height="23"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="100°" id="5sG-FE-uAc">
+                        <font key="font" size="13" name="AvenirNext-DemiBold"/>
+                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pFn-Yn-UAE">
+                    <rect key="frame" x="30" y="30" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="0sA-Zp-V0R"/>
+                        <constraint firstAttribute="height" constant="65" id="1cz-bl-UuO"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Clear" id="rYu-HQ-ZkD"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG4-F5-lB8">
+                    <rect key="frame" x="86" y="4" width="33" height="23"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="100°" id="Ksn-lr-cnZ">
+                        <font key="font" size="13" name="AvenirNext-DemiBold"/>
+                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="pFn-Yn-UAE" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="09a-YI-Pda"/>
+                <constraint firstAttribute="trailing" secondItem="HG4-F5-lB8" secondAttribute="trailing" constant="8" id="5bK-89-ckk"/>
+                <constraint firstItem="pFn-Yn-UAE" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="TUU-Ig-JT0"/>
+                <constraint firstAttribute="bottom" secondItem="HG4-F5-lB8" secondAttribute="bottom" constant="4" id="Wc3-3h-CiB"/>
+                <constraint firstAttribute="bottom" secondItem="mk8-xO-BKj" secondAttribute="bottom" constant="8" id="aUN-uu-e1j"/>
+                <constraint firstItem="mk8-xO-BKj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="liP-jr-d8j"/>
+                <constraint firstItem="ejX-Ru-pxS" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="mNk-fv-KkC"/>
+                <constraint firstItem="ejX-Ru-pxS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="mP9-6J-GgE"/>
+            </constraints>
+            <point key="canvasLocation" x="14" y="68"/>
+        </customView>
+        <collectionViewItem id="pvw-GL-9eG" customClass="WeatherCell" customModule="Weathered" customModuleProvider="target">
+            <connections>
+                <outlet property="cellDate" destination="ejX-Ru-pxS" id="NQP-Iz-Ffa"/>
+                <outlet property="highTemp" destination="HG4-F5-lB8" id="NdU-Mx-gsz"/>
+                <outlet property="lowTemp" destination="mk8-xO-BKj" id="ein-DD-dTR"/>
+                <outlet property="view" destination="c22-O7-iKe" id="gYN-kT-GUr"/>
+                <outlet property="weatherCellImage" destination="pFn-Yn-UAE" id="xj5-e6-UXg"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="Clear" width="107" height="107"/>
+    </resources>
+</document>
