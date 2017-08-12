@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class WeatherVC: NSViewController {
 
     @IBOutlet weak var dateLabel: NSTextField!

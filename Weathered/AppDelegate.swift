@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -19,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         statusItem.button?.title = "--°"
         statusItem.action = #selector(AppDelegate.displayPopUp(_:))
+        WeatherService.instance.downloadWeatherDetails()
         
     }
 
