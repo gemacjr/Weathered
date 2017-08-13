@@ -64,7 +64,7 @@ class CurrentWeather {
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         let currentDate = dateFormatter.string(from: Date())
-        currentWeather.date = "Today, \(currentDate)"
+        currentWeather.date = "Today \(currentDate)"
         
         return currentWeather
     }

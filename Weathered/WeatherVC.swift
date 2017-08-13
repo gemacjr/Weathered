@@ -70,6 +70,7 @@ class WeatherVC: NSViewController {
         locationLabel.stringValue = weather.cityName
         weatherConditionLabel.stringValue = weather.weatherType
         weatherImage.image = NSImage(named: weather.weatherType)
+        collectionView.reloadData()
     }
 
 
