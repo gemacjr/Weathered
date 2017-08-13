@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         WeatherService.instance.downloadWeatherDetails {
             self.statusItem.button?.title = "\(WeatherService.instance.currentWeather.currentTemp)°"
             WeatherService.instance.downloadForecast(completed: { 
-                
+                NotificationCenter.default.post(name: NOTIF_DOWNLOAD_COMPLETE, object: nil)
             })
         
         }

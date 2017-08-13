@@ -65,13 +65,9 @@ class Forecast {
                 let unixConvertedDate = Date(timeIntervalSince1970: date)
                 dayForecast.date = unixConvertedDate.dayOfTheWeek()
                 
-                print(dayForecast.date)
                 forecast.append(dayForecast)
             }
         }
-        
-        
-        
         
         return forecast
     }

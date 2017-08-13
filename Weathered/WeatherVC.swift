@@ -19,6 +19,8 @@ class WeatherVC: NSViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
     
+    @IBOutlet weak var poweredByButton: NSButton!
+    @IBOutlet weak var quitButton: NSButton!
     
     
     
@@ -31,11 +33,32 @@ class WeatherVC: NSViewController {
         updateUI()
     }
     
+    @IBAction func poweredByBtnClicked(_ sender: Any) {
+        
+        guard let url = URL(string: API_HOMEPAGE) else { return }
+        
+        NSWorkspace.shared().open(url)
+    }
     
+    @IBAction func quitBtnClicked(_ sender: Any) {
+        NSApplication.shared().terminate(nil)
+    }
     
     override func viewDidAppear() {
-        self.view.layer?.backgroundColor = CGColor(red: 0.29, green: 0.72, blue: 0.98, alpha: 1.0)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(WeatherVC.dataDownloadedNotif(_:)), name: NOTIF_DOWNLOAD_COMPLETE, object: nil)
+        self.view.layer?.backgroundColor = CGColor(red: 0.29, green: 0.72, blue: 0.98, alpha: 1.0)
+        quitButton.styleButtonText(button: quitButton, buttonName: "Quit", fontColor: .darkGray, alignment: .center, font: "Avenir Next", size: 11)
+        poweredByButton.styleButtonText(button: poweredByButton, buttonName: "Powered by OpenWeathermap", fontColor: .darkGray, alignment: .center, font: "Avenir Next", size: 11)
+        
+    }
+    
+    override func viewDidDisappear() {
+        NotificationCenter.default.removeObserver(self, name: NOTIF_DOWNLOAD_COMPLETE, object: nil)
+    }
+    
+    func dataDownloadedNotif(_ notif: Notification){
+        updateUI()
     }
 
     func updateUI() {
@@ -60,7 +83,11 @@ extension WeatherVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCol
         
         let forecastItem = collectionView.makeItem(withIdentifier: "WeatherCell", for: indexPath)
         
-        return forecastItem
+        guard let forecastCell = forecastItem as? WeatherCell else { return  forecastItem }
+        
+        forecastCell.configureCell(weatherCell: WeatherService.instance.forecast[indexPath.item])
+        
+        return forecastCell
     }
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
@@ -68,7 +95,7 @@ extension WeatherVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCol
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return WeatherService.instance.forecast.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {

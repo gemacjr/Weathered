@@ -14,16 +14,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejX-Ru-pxS">
-                    <rect key="frame" x="33" y="102" width="59" height="23"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Thursday" id="JCZ-iJ-oQT">
-                        <font key="font" size="13" name="AvenirNext-DemiBold"/>
-                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk8-xO-BKj">
-                    <rect key="frame" x="6" y="8" width="33" height="23"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="100°" id="5sG-FE-uAc">
+                    <rect key="frame" x="31" y="102" width="63" height="23"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Thursday" id="JCZ-iJ-oQT">
                         <font key="font" size="13" name="AvenirNext-DemiBold"/>
                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -32,14 +24,27 @@
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pFn-Yn-UAE">
                     <rect key="frame" x="30" y="30" width="65" height="65"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="65" id="0sA-Zp-V0R"/>
-                        <constraint firstAttribute="height" constant="65" id="1cz-bl-UuO"/>
+                        <constraint firstAttribute="height" constant="65" id="QpT-d3-pB7"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Clear" id="rYu-HQ-ZkD"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG4-F5-lB8">
                     <rect key="frame" x="86" y="4" width="33" height="23"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="100°" id="Ksn-lr-cnZ">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="29" id="civ-Mu-2cn"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="100°" id="Ksn-lr-cnZ">
+                        <font key="font" size="13" name="AvenirNext-DemiBold"/>
+                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk8-xO-BKj">
+                    <rect key="frame" x="4" y="4" width="33" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="29" id="dbP-1l-HHV"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="100°" id="5sG-FE-uAc">
                         <font key="font" size="13" name="AvenirNext-DemiBold"/>
                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -47,14 +52,16 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="pFn-Yn-UAE" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="09a-YI-Pda"/>
-                <constraint firstAttribute="trailing" secondItem="HG4-F5-lB8" secondAttribute="trailing" constant="8" id="5bK-89-ckk"/>
-                <constraint firstItem="pFn-Yn-UAE" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="TUU-Ig-JT0"/>
-                <constraint firstAttribute="bottom" secondItem="HG4-F5-lB8" secondAttribute="bottom" constant="4" id="Wc3-3h-CiB"/>
-                <constraint firstAttribute="bottom" secondItem="mk8-xO-BKj" secondAttribute="bottom" constant="8" id="aUN-uu-e1j"/>
-                <constraint firstItem="mk8-xO-BKj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="liP-jr-d8j"/>
-                <constraint firstItem="ejX-Ru-pxS" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="mNk-fv-KkC"/>
-                <constraint firstItem="ejX-Ru-pxS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="mP9-6J-GgE"/>
+                <constraint firstAttribute="trailing" secondItem="HG4-F5-lB8" secondAttribute="trailing" constant="8" id="15U-H0-FfI"/>
+                <constraint firstItem="pFn-Yn-UAE" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="30" id="BCI-w3-XpT"/>
+                <constraint firstItem="HG4-F5-lB8" firstAttribute="leading" secondItem="mk8-xO-BKj" secondAttribute="trailing" constant="53" id="Bme-A2-C5w"/>
+                <constraint firstItem="mk8-xO-BKj" firstAttribute="top" secondItem="pFn-Yn-UAE" secondAttribute="bottom" constant="3" id="LRg-Ip-OYD"/>
+                <constraint firstItem="ejX-Ru-pxS" firstAttribute="centerX" secondItem="pFn-Yn-UAE" secondAttribute="centerX" id="Lhx-I1-qm7"/>
+                <constraint firstItem="mk8-xO-BKj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="6" id="VQK-Gk-pVv"/>
+                <constraint firstItem="ejX-Ru-pxS" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="Z60-pK-3wR"/>
+                <constraint firstItem="ejX-Ru-pxS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="k9l-1i-NOS"/>
+                <constraint firstItem="mk8-xO-BKj" firstAttribute="baseline" secondItem="HG4-F5-lB8" secondAttribute="baseline" id="kRz-e9-wqV"/>
+                <constraint firstItem="pFn-Yn-UAE" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="unF-8b-KEg"/>
             </constraints>
             <point key="canvasLocation" x="14" y="68"/>
         </customView>

@@ -25,4 +25,12 @@ class WeatherCell: NSCollectionViewItem {
         
     }
     
+    func configureCell(weatherCell: Forecast){
+        
+        weatherCellImage.image = NSImage(named: weatherCell.weatherType)
+        highTemp.stringValue = "\(weatherCell.highTemp)°"
+        lowTemp.stringValue = "\(weatherCell.lowtemp)°"
+        cellDate.stringValue = weatherCell.date
+    }
+    
 }

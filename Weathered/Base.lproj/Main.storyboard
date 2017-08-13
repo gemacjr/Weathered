@@ -694,8 +694,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="167"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-ia-0EC">
-                                                <rect key="frame" x="28" y="144" width="81" height="23"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Today's Date" id="EUw-7n-Pry">
+                                                <rect key="frame" x="26" y="144" width="85" height="23"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Today's Date" id="EUw-7n-Pry">
                                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -710,8 +710,8 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGC-Tb-hhR">
-                                                <rect key="frame" x="32" y="0.0" width="73" height="23"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Arvada, CO" id="SXp-Vi-71O">
+                                                <rect key="frame" x="30" y="0.0" width="77" height="23"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Arvada, CO" id="SXp-Vi-71O">
                                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -741,8 +741,8 @@
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Clear" id="5ts-gk-YKC"/>
                                             </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iF-YH-Qqi">
-                                                <rect key="frame" x="90" y="0.0" width="36" height="23"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Clear" id="Xa2-9O-D3L">
+                                                <rect key="frame" x="88" y="0.0" width="40" height="23"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Clear" id="Xa2-9O-D3L">
                                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -798,10 +798,34 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-7n-W8i">
+                                <rect key="frame" x="332" y="3" width="66" height="32"/>
+                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lI8-nM-yPG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="quitBtnClicked:" target="XfG-lQ-9wD" id="eGe-pH-YeN"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AeN-dx-lZ2">
+                                <rect key="frame" x="2" y="3" width="224" height="32"/>
+                                <buttonCell key="cell" type="push" title="Powered by OpenWeatherMap" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ABK-jB-5xO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="poweredByBtnClicked:" target="XfG-lQ-9wD" id="6fh-V6-YcS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="AeN-dx-lZ2" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="CPD-Vg-kYV"/>
+                            <constraint firstAttribute="trailing" secondItem="NG1-7n-W8i" secondAttribute="trailing" constant="8" id="Dqa-bw-4CN"/>
+                            <constraint firstAttribute="bottom" secondItem="AeN-dx-lZ2" secondAttribute="bottom" constant="10" id="G3K-Tg-dzm"/>
                             <constraint firstItem="vye-WL-so0" firstAttribute="top" secondItem="4j1-gF-dPJ" secondAttribute="bottom" constant="20" id="TSS-nV-CuH"/>
                             <constraint firstItem="4j1-gF-dPJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ZNC-NR-hbY"/>
+                            <constraint firstAttribute="bottom" secondItem="NG1-7n-W8i" secondAttribute="bottom" constant="10" id="arI-BX-isd"/>
                             <constraint firstItem="4j1-gF-dPJ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="cm2-rY-295"/>
                             <constraint firstAttribute="trailing" secondItem="4j1-gF-dPJ" secondAttribute="trailing" constant="20" id="v8m-dU-Pti"/>
                             <constraint firstItem="vye-WL-so0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="wf0-6h-EgF"/>
@@ -812,6 +836,8 @@
                         <outlet property="collectionView" destination="Ttc-Nu-cAb" id="BpF-Cs-vAR"/>
                         <outlet property="dateLabel" destination="3Z1-ia-0EC" id="Mnc-qG-aXr"/>
                         <outlet property="locationLabel" destination="qGC-Tb-hhR" id="dx7-uU-W0c"/>
+                        <outlet property="poweredByButton" destination="AeN-dx-lZ2" id="3tk-nd-6O8"/>
+                        <outlet property="quitButton" destination="NG1-7n-W8i" id="8TE-a5-uwk"/>
                         <outlet property="tempLabel" destination="yTJ-gs-P1f" id="Isl-Ly-aPz"/>
                         <outlet property="weatherConditionLabel" destination="9iF-YH-Qqi" id="Kfo-nX-k5w"/>
                         <outlet property="weatherImage" destination="gOw-Sk-f48" id="EyJ-0F-xT3"/>
