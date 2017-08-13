@@ -27,6 +27,8 @@ class WeatherVC: NSViewController {
 
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
+        updateUI()
     }
     
     
@@ -36,10 +38,15 @@ class WeatherVC: NSViewController {
         
     }
 
-    override var representedObject: Any? {
-        didSet {
-            
-        }
+    func updateUI() {
+        
+        let weather = WeatherService.instance.currentWeather
+        
+        dateLabel.stringValue = weather.date
+        tempLabel.stringValue = "\(weather.currentTemp)°"
+        locationLabel.stringValue = weather.cityName
+        weatherConditionLabel.stringValue = weather.weatherType
+        weatherImage.image = NSImage(named: weather.weatherType)
     }
 
 
