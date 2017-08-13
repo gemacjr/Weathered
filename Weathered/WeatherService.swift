@@ -38,4 +38,12 @@ class WeatherService {
             
         }
     }
+    
+    func downloadForecast (completed: @escaping DownloadComplete) {
+        let url = URL(string: API_URL_FORECAST)
+        Alamofire.request(url!).responseData { (response) in
+            Forecast.loadForecastFromData(response.data!)
+            completed()
+        }
+    }
 }
