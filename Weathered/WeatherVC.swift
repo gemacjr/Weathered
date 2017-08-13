@@ -59,11 +59,15 @@ class WeatherVC: NSViewController {
     
     func dataDownloadedNotif(_ notif: Notification){
         updateUI()
+        print("Update UI")
     }
 
     func updateUI() {
         
         let weather = WeatherService.instance.currentWeather
+        
+        print(weather.date)
+        print(weather.cityName)
         
         dateLabel.stringValue = weather.date
         tempLabel.stringValue = "\(weather.currentTemp)°"
@@ -96,7 +100,8 @@ extension WeatherVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSCol
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return WeatherService.instance.forecast.count
+        //return WeatherService.instance.forecast.count
+        return 7
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {

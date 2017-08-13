@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, CLLocationManagerDelegate {
         statusItem.button?.title = "--°"
         statusItem.action = #selector(AppDelegate.displayPopUp(_:))
         
-        let updateWeatherData = Timer.scheduledTimer(timeInterval: 60 * 15, target: self, selector: #selector(AppDelegate.downloadWeatherData), userInfo: nil, repeats: true)
+        let updateWeatherData = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(AppDelegate.downloadWeatherData), userInfo: nil, repeats: true)
         
         updateWeatherData.tolerance = 60
         
@@ -42,6 +42,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, CLLocationManagerDelegate {
         currentLocation = locations[locations.count - 1]
         Location.instance.latitude = currentLocation.coordinate.latitude
         Location.instance.longitude = currentLocation.coordinate.longitude
+        
+        print(currentLocation.coordinate.latitude, "", currentLocation.coordinate.longitude)
         downloadWeatherData()
     }
     

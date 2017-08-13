@@ -41,6 +41,7 @@ class WeatherService {
             
             self.currentWeather = CurrentWeather.loadCurrentWeatherFromData(data)
             
+            print("The data", data)
             
             completed()
             
